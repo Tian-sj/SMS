@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/login_logo.jpg</file>
+        <file>images/login_head_name.png</file>
+        <file>images/login_tail_name.png</file>
+        <file>images/TJ.png</file>
+        <file>images/TJ.ico</file>
+        <file>images/daily.png</file>
+        <file>images/sales.png</file>
+        <file>images/setting.png</file>
+        <file>images/stats.png</file>
+        <file>images/stocking.png</file>
+        <file>images/stocks.png</file>
+        <file>images/main_page.png</file>
+        <file>images/storage.png</file>
+        <file>images/storage2.png</file>
+    </qresource>
+</RCC>

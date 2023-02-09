@@ -1,9 +1,0 @@
-<RCC>
-    <qresource prefix="/">
-        <file>images/login_logo.jpg</file>
-        <file>images/login_head_name.png</file>
-        <file>images/login_tail_name.png</file>
-        <file>images/TJ.png</file>
-        <file>images/TJ.ico</file>
-    </qresource>
-</RCC>
