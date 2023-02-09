@@ -18,7 +18,13 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_AUTOUIC_SEARCH_PATHS ${CMAKE_SOURCE_DIR}/ui)
 
 # 执行程序生成路径
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
+if(WIN32)
+    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin/windows)
+elseif(APPLE)
+    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin/macos)
+else(UNIX)
+    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin/linux)
+endif()
 
 # 头文件
 include_directories(${PROJECT_SOURCE_DIR}/include)
@@ -30,12 +36,12 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Sql)
 
 # 将各个文件夹下的所有文件打包
 FILE(GLOB ${PROJECT_NAME}_HEADER "include/*.h")
-FILE(GLOB ${PROJECT_NAME}_SOURCES "src/*.cpp")
+FILE(GLOB ${PROJECT_NAME}_SOURCES "source/*.cpp")
 FILE(GLOB ${PROJECT_NAME}_UI "ui/*.ui")
-FILE(GLOB ${PROJECT_NAME}_QRC "qrc/*.qrc")
+FILE(GLOB ${PROJECT_NAME}_QRC "resource/*.qrc")
 
 set(PROJECT_SOURCES
-    "qrc/app_win32.rc"
+    "resource/app_win32.rc"
     ${${PROJECT_NAME}_QRC}
     ${${PROJECT_NAME}_UI}
     ${${PROJECT_NAME}_HEADER}
